@@ -1,0 +1,11 @@
+.modal-header
+    h5.modal-title Script Result
+        
+.modal-body
+    .result-info
+        .d-flex.justify-content-between.align-items-center
+        pre.result-content {{result}}
+
+.modal-footer
+    button.btn.btn-sm.btn-primary((click)='copyResult()') {{copyText}}
+    button.btn.btn-sm.btn-secondary((click)='close()') Close 

@@ -1,0 +1,27 @@
+pre {
+    background: rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 4px;
+    margin: 0;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.script-content {
+    font-family: monospace;
+    font-size: 12px;
+}
+
+.result-content {
+    font-family: monospace;
+    font-size: 14px;
+    white-space: pre-wrap;
+}
+
+button {
+    transition: all 0.2s;
+}
+
+.btn-secondary {
+    min-width: 60px; // 防止 Copy/Copied 切换时按钮宽度变化
+}

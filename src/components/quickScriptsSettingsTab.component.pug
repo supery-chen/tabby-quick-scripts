@@ -1,0 +1,27 @@
+h3 Quick Scripts
+
+.script-groups(*ngFor="let group of childGroups")
+    .group-header.d-flex.align-items-center.mb-2
+        .fa.fa-fw.fa-chevron-right(*ngIf='groupCollapsed[group.name]', (click)='groupCollapsed[group.name] = !groupCollapsed[group.name]')
+        .fa.fa-fw.fa-chevron-down(*ngIf='!groupCollapsed[group.name]', (click)='groupCollapsed[group.name] = !groupCollapsed[group.name]')
+        h5.mb-0.ml-2 {{group.name || "Ungrouped"}}
+
+    .list-group(*ngIf='!groupCollapsed[group.name]', cdkDropList, (cdkDropListDropped)="drop($event, group)")
+        .list-group-item(*ngFor="let script of group.scripts", cdkDrag)
+            .d-flex.w-100
+                .mr-auto.d-flex.align-items-center
+                    i.fas.fa-grip-vertical.mr-2.text-muted(cdkDragHandle)
+                    div
+                        div {{script.name}}
+                        small.text-muted {{script.group}}
+                .ml-3
+                    button.btn.btn-secondary.btn-sm.mr-1((click)='editScript(script)')
+                        i.fas.fa-pencil-alt
+                    button.btn.btn-danger.btn-sm((click)='deleteScript(script)')
+                        i.fas.fa-trash-alt
+
+button.btn.btn-primary.mt-3((click)='createScript()')
+    i.fas.fa-plus.mr-2
+    span Add script
+                    
+
