@@ -42,7 +42,7 @@ The default shortcut for opening the Quick Scripts menu is `Alt+S` (Windows).
 The plugin:
 - Takes the selected terminal text as input
 - Passes it through the selected script(s)
-- Displays the result in a toast notification
+- Displays the result in a modal
 - Provides an option to copy the result to clipboard
 
 When running a script group, each script's output becomes the input for the next script in sequence.
